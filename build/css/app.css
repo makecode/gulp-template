@@ -13,10 +13,6 @@ blockquote:before, blockquote:after, q:before, q:after { content: ""; content: n
 
 table { border-collapse: collapse; border-spacing: 0; }
 
-h1 { font-size: 39px; }
-
-p { font-size: 31px; }
-
 
 
 /*# sourceMappingURL=app.css.map */
