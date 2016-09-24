@@ -17,7 +17,7 @@ $ gulp
 
 BrowserSyn start automatically and show your IP in console. The default local port - 7777. 
 
-You can change this in _gulpfile.js_, in browserSync settigs _port_:
+You can change this in _gulpfile.js_, in browserSync settigs, _port_:
 
 ![PNG](http://2.1m.yt/iuQRklE.png)
 
