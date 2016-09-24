@@ -1,0 +1,20 @@
+{
+  "name": "ProjectName",
+  "version": "1.0.0",
+  "description": "Gulp template",
+  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.16.0",
+    "gulp": "~3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-imagemin": "^3.0.3",
+    "gulp-rigger": "^0.5.8",
+    "gulp-ruby-sass": "^2.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "imagemin-optipng": "^5.2.1"
+  }
+}
