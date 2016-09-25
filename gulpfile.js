@@ -7,6 +7,7 @@ const gulp = require('gulp'),
 			autoprefixer = require('gulp-autoprefixer'),
 			sourcemaps = require('gulp-sourcemaps'),
 			imagemin = require('gulp-imagemin'),
+			notify = require('gulp-notify'),
 			optipng = require('imagemin-optipng'),
 			browserSync = require('browser-sync');
 
@@ -49,59 +50,63 @@ const reload = browserSync.reload,
 			files: [path.build.html + '*.html', path.build.style + '*.css', path.build.js + '*.js'],
 			host: 'localhost',
 			port: '7777',
+			notify: false,
 			logPrefixed: 'DevilLivesHere'
 };
 
 //task for HTML
 gulp.task('html:build', function () {
 	gulp.src(path.src.html)
-	.pipe(rigger())
-	.pipe(gulp.dest(path.build.html))
-	.pipe(reload({stream:true}));
+		.pipe(rigger())
+		.pipe(gulp.dest(path.build.html))
+		.pipe(reload({stream:true}));
 });
 
 //task for JS
 gulp.task('js:build', function () {
 	gulp.src(path.src.js)
-	.pipe(rigger())
-	.pipe(gulp.dest(path.build.js))
-	.pipe(reload({stream: true}));
+		.pipe(rigger())
+		.pipe(gulp.dest(path.build.js))
+		.pipe(reload({stream: true}));
 });
 
 //task for SASS
 gulp.task('style:build', function () {
 	gulp.src(path.src.style)
-	// .pipe(sourcemaps.init())
-	sass(path.src.style, {
-		sourcemap: true,
-		style: 'compact',
-		emitCompileError: true
-	})
-	.pipe(autoprefixer({
-		browsers: ['last 10 versions'], 
-		cascade: false
-	}))
-	.pipe(sourcemaps.write('./'))
-	.pipe(gulp.dest(path.build.style))
-	.pipe(reload({stream: true}));
+		sass(path.src.style, {
+			sourcemap: true,
+			style: 'compact',
+			emitCompileError: true
+		})
+		.on('error', notify.onError({
+			title: 'SASS error!',
+			message: '<%= error.message %>'
+		}))
+		.pipe(autoprefixer({
+			browsers: ['last 10 versions'], 
+			cascade: false
+		}))
+		.pipe(sourcemaps.write('./'))
+		.pipe(gulp.dest(path.build.style))
+		.pipe(reload({stream: true}));
 });
 
 //task for pictures
 gulp.task('image:build', function () {
 	gulp.src(path.src.img)
-	.pipe(imagemin({
-		progressive: true,
-		use: [optipng()],
-		interlaced: true
-	}))
-	.pipe(gulp.dest(path.build.img))
-	.pipe(reload({stream: true}));
+		.pipe(imagemin({
+			progressive: true,
+			use: [optipng()],
+			interlaced: true
+		}))
+		.pipe(gulp.dest(path.build.img))
+		.pipe(reload({stream: true}));
 });
 
 //task for fonts
 gulp.task('fonts:build', function () {
 	gulp.src(path.src.fonts)
-	.pipe(gulp.dest(path.build.fonts))
+		.pipe(gulp.dest(path.build.fonts))
 });
 
 gulp.task('build', [
