@@ -15,9 +15,9 @@ Gulp-template for frontend assembly.
 $ gulp
 ```
 
-BrowserSyn start automatically and show your IP in console. The default local port - 7777. 
+BrowserSyn start automatically and show your IP in console. The default local port - _7777_. 
 
-You can change this in _gulpfile.js_ - browserSync settigs - _port_:
+You can change this in _gulpfile.js - browserSync settigs - port_:
 
 ![PNG](http://2.1m.yt/iuQRklE.png)
 
@@ -46,6 +46,12 @@ If you make a syntax error in SASS, gulp sure to report it.
 ![PNG](http://2.1m.yt/rx4I8RV.png)
 
 ####Link library
-By default, already connected Eric Meyer's “Reset CSS” 2.0 and jQuery v1.11.3.
+By default, already connected:
+
+- Eric Meyer's “Reset CSS” 2.0
+
+- jQuery v1.11.3
+
+- SASS mixins
 
 ##Enjoy!

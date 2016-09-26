@@ -1,57 +1,57 @@
 'use strict';
 
 //import gulp and plugins
-const gulp = require('gulp'),
-			sass = require('gulp-ruby-sass'),
-			rigger = require('gulp-rigger'),
-			autoprefixer = require('gulp-autoprefixer'),
-			sourcemaps = require('gulp-sourcemaps'),
-			imagemin = require('gulp-imagemin'),
-			notify = require('gulp-notify'),
-			optipng = require('imagemin-optipng'),
-			browserSync = require('browser-sync');
+var gulp = require('gulp'),
+		sass = require('gulp-ruby-sass'),
+		rigger = require('gulp-rigger'),
+		autoprefixer = require('gulp-autoprefixer'),
+		sourcemaps = require('gulp-sourcemaps'),
+		notify = require('gulp-notify'),
+		imagemin = require('gulp-imagemin'),
+		optipng = require('imagemin-optipng'),
+		browserSync = require('browser-sync');
 
 //our paths to files
-const path = {
-			//where we add ready files
-			build: {
-				html: 'build/',
-				style: 'build/css/',
-				js: 'build/js/',
-				img: 'build/img',
-				fonts: 'build/fonts'
-			},
-			//where are working files
-			src: {
-				html: 'src/*.html',
-				style: 'src/sass/app.sass',
-				js: 'src/js/app.js',
-				img: 'src/img/**/*.*',
-				fonts: 'src/fonts/**/*.*'
-			},
-			//files to watch
-			watch: {
-				html: 'src/**/*.html',
-				style: 'src/sass/**/*.sass',
-				js: 'src/js/**/*.js',
-				img: 'src/img/**/*.*',
-				fonts: 'src/fonts/**/*.*'
-			},
-			//for quick removing build-folder
-			rm: './build'
+var path = {
+		//where we add ready files
+		build: {
+			html: 'build/',
+			style: 'build/css/',
+			js: 'build/js/',
+			img: 'build/img',
+			fonts: 'build/fonts'
+		},
+		//where are working files
+		src: {
+			html: 'src/*.html',
+			style: 'src/sass/app.sass',
+			js: 'src/js/app.js',
+			img: 'src/img/**/*.*',
+			fonts: 'src/fonts/**/*.*'
+		},
+		//files to watch
+		watch: {
+			html: 'src/**/*.html',
+			style: 'src/sass/**/*.sass',
+			js: 'src/js/**/*.js',
+			img: 'src/img/**/*.*',
+			fonts: 'src/fonts/**/*.*'
+		},
+		//for quick removing build-folder
+		rm: './build'
 };
 
 //browserSync settings
-const reload = browserSync.reload,
-			config = {
-			server: {
-				baseDir: './build'
-			},
-			files: [path.build.html + '*.html', path.build.style + '*.css', path.build.js + '*.js'],
-			host: 'localhost',
-			port: '7777',
-			notify: false,
-			logPrefixed: 'DevilLivesHere'
+var reload = browserSync.reload,
+		config = {
+		server: {
+			baseDir: './build'
+		},
+		files: [path.build.html + '*.html', path.build.style + '*.css', path.build.js + '*.js'],
+		host: 'localhost',
+		port: '7777',
+		notify: false,
+		logPrefixed: 'DevilLivesHere'
 };
 
 //task for HTML
