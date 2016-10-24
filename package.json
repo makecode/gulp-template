@@ -16,6 +16,7 @@
     "gulp-rigger": "^0.5.8",
     "gulp-ruby-sass": "^2.1.0",
     "gulp-sourcemaps": "^1.6.0",
-    "imagemin-optipng": "^5.2.1"
+    "imagemin-optipng": "^5.2.1",
+    "susy": "^2.2.12"
   }
 }

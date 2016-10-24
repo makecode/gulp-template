@@ -1,42 +1,42 @@
 // clearfix
 =clear
-	&:after
-		content: " "
-		display: table
-		clear: both
-	*zoom: 1
+  &:after
+    content: " "
+    display: table
+    clear: both
+  *zoom: 1
 
 // fast font-family
 // usage:
 // +font(black, cytiapro-black-webfont)
 =font($alias, $name)
-	@font-face
-		font-family: $alias
-		src: url("../fonts/" + $name + ".eot")
-		src: url("../fonts/" + $name + ".eot?#iefix") format("embedded-opentype"), url("../fonts/" + $name + ".woff2") format("woff2"), url("../fonts/" + $name + ".woff") format("woff"), url("../fonts/" + $name + ".ttf") format("truetype")
-		font-weight: normal
-		font-style: normal
+  @font-face
+    font-family: $alias
+    src: url("../fonts/" + $name + ".eot")
+    src: url("../fonts/" + $name + ".eot?#iefix") format("embedded-opentype"), url("../fonts/" + $name + ".woff2") format("woff2"), url("../fonts/" + $name + ".woff") format("woff"), url("../fonts/" + $name + ".ttf") format("truetype")
+    font-weight: normal
+    font-style: normal
 
 // fast media-query with max-width
 // usage:
 // +m(768)
 =m($width)
-	@media only screen and (max-width: $width+ "px")
-		@content
+  @media only screen and (max-width: $width+ "px")
+    @content
 
 // cover
 =cover
-	background-repeat: no-repeat
-	background-size: cover
-	background-position: 50% 50%
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: 50% 50%
 
 // font-size
 =fs($sizeValue)
-	font-size: $sizeValue + px
+  font-size: $sizeValue + px
 
 // easy align at center
 =center
-	position: absolute
-	top: 50%
-	left: 50%
-	transform: translate(-50%,-50%)
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%,-50%)

@@ -41,8 +41,6 @@ Use //=include for importing:
 
 ####Notify on SASS error
 
-If you make a syntax error in SASS, gulp sure to report it.
-
 ![PNG](http://2.1m.yt/rx4I8RV.png)
 
 ####Link library
