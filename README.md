@@ -19,7 +19,7 @@ BrowserSyn start automatically and show your IP in console. The default local po
 
 You can change this in _gulpfile.js - browserSync settigs - port_:
 
-![PNG](http://2.1m.yt/iuQRklE.png)
+![PNG](http://1.1m.yt/xy52KvU.png)
 
 ####Structure
 `/src/` - your working directory.

@@ -49,7 +49,7 @@ var reload = browserSync.reload,
     },
     files: [path.build.html + '*.html', path.build.style + '*.css', path.build.js + '*.js'],
     host: 'localhost',
-    port: '7777',
+    port: '8080',
     notify: false,
     logPrefixed: 'DevilLivesHere'
 };
