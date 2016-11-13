@@ -13,6 +13,7 @@
     "gulp-autoprefixer": "^3.1.1",
     "gulp-imagemin": "^3.0.3",
     "gulp-notify": "^2.2.0",
+    "gulp-pug": "^3.1.0",
     "gulp-rigger": "^0.5.8",
     "gulp-ruby-sass": "^2.1.0",
     "gulp-sourcemaps": "^1.6.0",

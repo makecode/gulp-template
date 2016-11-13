@@ -2,6 +2,7 @@
 
 //import gulp and plugins
 var gulp = require('gulp'),
+    pug = require('gulp-pug'),
     sass = require('gulp-ruby-sass'),
     rigger = require('gulp-rigger'),
     autoprefixer = require('gulp-autoprefixer'),
@@ -16,6 +17,7 @@ var path = {
     //where we add ready files
     build: {
       html: 'build/',
+      pug: 'build/',
       style: 'build/css/',
       js: 'build/js/',
       img: 'build/img',
@@ -24,6 +26,7 @@ var path = {
     //where are working files
     src: {
       html: 'src/*.html',
+      pug: 'src/pug/*.pug',
       style: 'src/sass/app.sass',
       js: 'src/js/app.js',
       img: 'src/img/**/*.*',
@@ -32,6 +35,7 @@ var path = {
     //files to watch
     watch: {
       html: 'src/**/*.html',
+      pug: 'src/pug/**/*.pug',
       style: 'src/sass/**/*.sass',
       js: 'src/js/**/*.*',
       img: 'src/img/**/*.*',
@@ -60,6 +64,13 @@ gulp.task('html:build', function () {
     .pipe(rigger())
     .pipe(gulp.dest(path.build.html))
     .pipe(reload({stream: true}));
+});
+
+//task for PUG (Jade)
+gulp.task('pug:build', function () {
+  gulp.src(path.src.pug)
+    .pipe(pug({pretty: true}))
+    .pipe(gulp.dest(path.build.pug))
 });
 
 //task for JS
@@ -110,7 +121,8 @@ gulp.task('fonts:build', function () {
 });
 
 gulp.task('build', [
-  'html:build',
+  // 'html:build', //for simple html uncomment this
+  'pug:build', //and comment this
   'js:build',
   'style:build',
   'image:build',
@@ -118,7 +130,8 @@ gulp.task('build', [
 ]);
 
 gulp.task('watch', function () {
-  gulp.watch(path.watch.html, ['html:build']);
+  // gulp.watch(path.watch.html, ['html:build']); //for simple html uncomment this
+  gulp.watch(path.watch.pug, ['pug:build']); //and comment this
   gulp.watch(path.watch.js, ['js:build']);
   gulp.watch(path.watch.style, ['style:build']);
   gulp.watch(path.watch.img, ['image:build']);

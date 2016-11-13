@@ -1,4 +1,4 @@
-##Gulp template (SASS, autoprefixer, BrowserSync, include)
+##Gulp template (Pug, SASS, autoprefixer, BrowserSync, include)
 
 Gulp-template for frontend assembly.
 
