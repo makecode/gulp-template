@@ -8,9 +8,12 @@
     "url": "https://github.com/"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-latest": "^6.24.1",
     "browser-sync": "^2.16.0",
     "gulp": "~3.9.1",
     "gulp-autoprefixer": "^3.1.1",
+    "gulp-babel": "^7.0.0",
     "gulp-imagemin": "^3.0.3",
     "gulp-notify": "^2.2.0",
     "gulp-pug": "^3.1.0",
@@ -18,6 +21,7 @@
     "gulp-ruby-sass": "^2.1.0",
     "gulp-sourcemaps": "^1.6.0",
     "imagemin-optipng": "^5.2.1",
+    "jquery": "^3.2.1",
     "susy": "^2.2.12"
   }
 }

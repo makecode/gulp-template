@@ -1,16 +1,17 @@
 'use strict';
 
 //import gulp and plugins
-var gulp = require('gulp'),
-    pug = require('gulp-pug'),
-    sass = require('gulp-ruby-sass'),
-    rigger = require('gulp-rigger'),
-    autoprefixer = require('gulp-autoprefixer'),
-    sourcemaps = require('gulp-sourcemaps'),
-    notify = require('gulp-notify'),
-    imagemin = require('gulp-imagemin'),
-    optipng = require('imagemin-optipng'),
-    browserSync = require('browser-sync');
+const gulp = require('gulp');
+const babel = require('gulp-babel');
+const pug = require('gulp-pug');
+const sass = require('gulp-ruby-sass');
+const rigger = require('gulp-rigger');
+const autoprefixer = require('gulp-autoprefixer');
+const sourcemaps = require('gulp-sourcemaps');
+const notify = require('gulp-notify');
+const imagemin = require('gulp-imagemin');
+const optipng = require('imagemin-optipng');
+const browserSync = require('browser-sync');
 
 //our paths to files
 var path = {
@@ -59,7 +60,7 @@ var reload = browserSync.reload,
 };
 
 //task for HTML
-gulp.task('html:build', function () {
+gulp.task('html:build', () => {
   gulp.src(path.src.html)
     .pipe(rigger())
     .pipe(gulp.dest(path.build.html))
@@ -67,22 +68,23 @@ gulp.task('html:build', function () {
 });
 
 //task for PUG (Jade)
-gulp.task('pug:build', function () {
+gulp.task('pug:build', () => {
   gulp.src(path.src.pug)
     .pipe(pug({pretty: true}))
     .pipe(gulp.dest(path.build.pug))
 });
 
 //task for JS
-gulp.task('js:build', function () {
+gulp.task('js:build', () => {
   gulp.src(path.src.js)
     .pipe(rigger())
+    .pipe(babel())
     .pipe(gulp.dest(path.build.js))
     .pipe(reload({stream: true}));
 });
 
 //task for SASS
-gulp.task('style:build', function () {
+gulp.task('style:build', () => {
   gulp.src(path.src.style)
     sass(path.src.style, {
       sourcemap: true,
@@ -103,7 +105,7 @@ gulp.task('style:build', function () {
 });
 
 //task for pictures
-gulp.task('image:build', function () {
+gulp.task('image:build', () => {
   gulp.src(path.src.img)
     .pipe(imagemin({
       progressive: true,
@@ -115,7 +117,7 @@ gulp.task('image:build', function () {
 });
 
 //task for fonts
-gulp.task('fonts:build', function () {
+gulp.task('fonts:build', () => {
   gulp.src(path.src.fonts)
     .pipe(gulp.dest(path.build.fonts))
 });
@@ -129,7 +131,7 @@ gulp.task('build', [
   'fonts:build'
 ]);
 
-gulp.task('watch', function () {
+gulp.task('watch', () => {
   // gulp.watch(path.watch.html, ['html:build']); //for simple html uncomment this
   gulp.watch(path.watch.pug, ['pug:build']); //and comment this
   gulp.watch(path.watch.js, ['js:build']);
@@ -138,7 +140,7 @@ gulp.task('watch', function () {
   gulp.watch(path.watch.fonts, ['fonts:build']);
 });
 
-gulp.task('webserver', function () {
+gulp.task('webserver', () => {
   browserSync(config);
 });
 
