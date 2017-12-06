@@ -9,7 +9,7 @@ Gulp-template for frontend assembly.
 
 ##### How use
 1. Clone or download this repo in directory of your choice.
-2. Inside this directory run `npm install`.
+2. Inside this directory run `yarn install`.
 
 ##### Start
 ```shell
