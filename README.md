@@ -1,4 +1,4 @@
-Gulp template (Pug, SASS, ES6)
+Gulp template (HTML, SASS, ES6)
 ----
 HTML, SASS + autoprefixer, ES6 (babel), BrowserSync (livereload), include (html/js files).
 Gulp-template for frontend assembly.
