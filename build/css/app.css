@@ -15,6 +15,11 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 html, body { box-sizing: border-box; height: 100%; }
 
+@font-face { font-family: roboto-light; src: url("../fonts/roboto-light.eot"); src: url("../fonts/roboto-light.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-light.woff2") format("woff2"), url("../fonts/roboto-light.woff") format("woff"), url("../fonts/roboto-light.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+@font-face { font-family: roboto-regular; src: url("../fonts/roboto-regular.eot"); src: url("../fonts/roboto-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-regular.woff2") format("woff2"), url("../fonts/roboto-regular.woff") format("woff"), url("../fonts/roboto-regular.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+@font-face { font-family: roboto-bold; src: url("../fonts/roboto-bold.eot"); src: url("../fonts/roboto-bold.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-bold.woff2") format("woff2"), url("../fonts/roboto-bold.woff") format("woff"), url("../fonts/roboto-bold.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+body { background-color: #eee; font-family: "roboto-regular", Helvetica, Arial, sans-serif; }
+
 
 
 /*# sourceMappingURL=app.css.map */

@@ -3,9 +3,8 @@
 //import gulp and plugins
 const gulp = require('gulp');
 const babel = require('gulp-babel');
-const pug = require('gulp-pug');
 const sass = require('gulp-ruby-sass');
-const rigger = require('gulp-rigger');
+const rigger = require('gulp-rigger');// http://buildjs.github.io/rigger/
 const autoprefixer = require('gulp-autoprefixer');
 const sourcemaps = require('gulp-sourcemaps');
 const notify = require('gulp-notify');
@@ -18,7 +17,6 @@ var path = {
     //where we add ready files
     build: {
       html: 'build/',
-      pug: 'build/',
       style: 'build/css/',
       js: 'build/js/',
       img: 'build/img',
@@ -27,7 +25,6 @@ var path = {
     //where are working files
     src: {
       html: 'src/*.html',
-      pug: 'src/pug/*.pug',
       style: 'src/sass/app.sass',
       js: 'src/js/app.js',
       img: 'src/img/**/*.*',
@@ -36,7 +33,6 @@ var path = {
     //files to watch
     watch: {
       html: 'src/**/*.html',
-      pug: 'src/pug/**/*.pug',
       style: 'src/sass/**/*.sass',
       js: 'src/js/**/*.*',
       img: 'src/img/**/*.*',
@@ -67,13 +63,6 @@ gulp.task('html:build', () => {
     .pipe(reload({stream: true}));
 });
 
-//task for PUG (Jade)
-gulp.task('pug:build', () => {
-  gulp.src(path.src.pug)
-    .pipe(pug({pretty: true}))
-    .pipe(gulp.dest(path.build.pug))
-});
-
 //task for JS
 gulp.task('js:build', () => {
   gulp.src(path.src.js)
@@ -96,7 +85,7 @@ gulp.task('style:build', () => {
       message: '<%= error.message %>'
     }))
     .pipe(autoprefixer({
-      browsers: ['last 10 versions'], 
+      browsers: ['last 10 versions'],
       cascade: false
     }))
     .pipe(sourcemaps.write('./'))
@@ -123,8 +112,7 @@ gulp.task('fonts:build', () => {
 });
 
 gulp.task('build', [
-  // 'html:build', //for simple html uncomment this
-  'pug:build', //and comment this
+  'html:build',
   'js:build',
   'style:build',
   'image:build',
@@ -132,8 +120,7 @@ gulp.task('build', [
 ]);
 
 gulp.task('watch', () => {
-  // gulp.watch(path.watch.html, ['html:build']); //for simple html uncomment this
-  gulp.watch(path.watch.pug, ['pug:build']); //and comment this
+  gulp.watch(path.watch.html, ['html:build']);
   gulp.watch(path.watch.js, ['js:build']);
   gulp.watch(path.watch.style, ['style:build']);
   gulp.watch(path.watch.img, ['image:build']);

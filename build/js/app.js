@@ -2286,5 +2286,6 @@ $(document).ready(function () {
 
 	// your code will be here!
 	var foo = 'Hello';
-	console.log(foo + ", i'm ES6 template!");
+	var bar = $('.title');
+	console.log(foo + ", i'm ES6 template!", bar);
 });

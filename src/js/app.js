@@ -5,6 +5,7 @@ $( document ).ready(() => {
 
 	// your code will be here!
 	const foo = 'Hello';
-	console.log(`${foo}, i'm ES6 template!`);
+	const bar = $('.title');
+	console.log(`${foo}, i'm ES6 template!`, bar);
 
 });
