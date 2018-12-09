@@ -5,21 +5,31 @@
   "author": "",
   "repository": {
     "type": "git",
-    "url": "https://github.com/"
+    "url": "https://github.com/makecode/gulp-template"
+  },
+  "scripts": {
+    "start": "gulp watch",
+    "build": "gulp build",
+    "clean": "gulp clean"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-preset-latest": "^6.24.1",
-    "browser-sync": "^2.16.0",
-    "gulp": "~3.9.1",
-    "gulp-autoprefixer": "^3.1.1",
-    "gulp-babel": "^7.0.0",
-    "gulp-imagemin": "^3.0.3",
-    "gulp-notify": "^2.2.0",
-    "gulp-rigger": "^0.5.8",
-    "gulp-ruby-sass": "^2.1.0",
-    "gulp-sourcemaps": "^1.6.0",
-    "imagemin-optipng": "^5.2.1",
-    "susy": "^2.2.12"
+    "@babel/core": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
+    "@babel/register": "^7.0.0",
+    "autoprefixer": "^9.4.2",
+    "browser-sync": "^2.26.3",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-changed": "^3.2.0",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-include": "^2.3.1",
+    "gulp-notify": "^3.2.0",
+    "gulp-nunjucks-render": "^2.2.2",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-prettify": "^0.5.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4"
   }
 }

@@ -7,5 +7,4 @@ $( document ).ready(() => {
 	const foo = 'Hello';
 	const bar = $('.title');
 	console.log(`${foo}, i'm ES6 template!`, bar);
-
 });
